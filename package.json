@@ -1,0 +1,26 @@
+{
+  "name": "simple-react",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "gulp": "^3.9.0",
+    "reactify": "^1.1.1",
+    "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.3",
+    "jquery": "^2.2.0",
+    "react": "^0.14.6",
+    "react-bootstrap": "^0.28.2",
+    "react-dom": "^0.14.6"
+  }
+}
