@@ -1,7 +1,7 @@
 var gulp = require("gulp");
 var reactify = require("reactify");
 var browserify = require("browserify");
-var source = require("vinyl-source-stream")
+var source = require("vinyl-source-stream");
 
 gulp.task('transpile', () => {
   browserify('src/js/main.js')
@@ -20,6 +20,16 @@ gulp.task('copy', function(){
     .pipe(gulp.dest('dist/css'));
 });
 
-gulp.task('default', ['transpile', 'copy'], function(){
+// include dependencies for Bootstrap
+gulp.task('lib', function(){
+  gulp.src("./node_modules/jquery/dist/jquery.min.js")
+    .pipe(gulp.dest('dist/lib/js'));
+  gulp.src("./node_modules/bootstrap/dist/js/bootstrap.min.js")
+    .pipe(gulp.dest('dist/lib/js'));
+  gulp.src("./node_modules/bootstrap/dist/css/bootstrap.min.css")
+    .pipe(gulp.dest('dist/lib/css'));
+});
+
+gulp.task('default', ['transpile', 'copy', 'lib'], function(){
   return gulp.watch('src/**/*.*', ['transpile', 'copy']);
 });

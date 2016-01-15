@@ -19030,7 +19030,7 @@ var React = require("react");
 var App = React.createClass({displayName: "App",
   render: function(){
     return(
-      React.createElement("div", null, "Test")
+      React.createElement("div", {className: "container"}, "Test")
     );
   }
 });
